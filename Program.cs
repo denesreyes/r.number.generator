@@ -19,9 +19,9 @@ namespace n.random.generator
                 Console.WriteLine(string.Join(", ", rnl));
 
                 sw.Stop();
-                Console.WriteLine($"{sw.Elapsed}");
+                Console.WriteLine(sw.Elapsed);
             }
-            catch (Exception ex) { Console.WriteLine($"Failed to generate random number list. Error: {ex.Message}"); }
+            catch (Exception ex) { Console.WriteLine(string.Format("Failed to generate random number list. Error: {0}", ex.Message)); }
         }
     }
 }

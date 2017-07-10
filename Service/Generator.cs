@@ -28,7 +28,7 @@ namespace n.random.generator.Service
         {
             // Make sure lower bound value is lesser than the upper bound value.
             if (lowerBound > upperBound)
-                throw new Exception($"The provided upper bound value ({upperBound}) must be greater than or equal to the provided lower bound value ({lowerBound}).");
+                throw new Exception(string.Format("The provided upper bound value ({0}) must be greater than or equal to the provided lower bound value ({1}).", upperBound, lowerBound));
             var cap = upperBound - lowerBound + 1; // Determine array size 
             var result = new int[cap];
             var ol = GenerateOrderedList(lowerBound, upperBound).ToList(); // Convert to list to utilize the listing wrapper
@@ -59,7 +59,7 @@ namespace n.random.generator.Service
         {
             // Make sure min value is lesser than the provided max value
             if (min > max)
-                throw new Exception($"The provided maximum value ({max}) must be greater than or equal to the provided minimum value ({min}).");
+                throw new Exception(string.Format("The provided maximum value ({0}) must be greater than or equal to the provided minimum value ({1}).", max, min));
             return _pseudoRandom.Next(min, max);
         }
 
